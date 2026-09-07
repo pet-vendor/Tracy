@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Tracy Chihuahua Puppies for Adoption — adoption inquiries and contact options.">
+  <meta name="theme-color" content="#111111">
+  <title>Tracy Chihuahua Puppies for Adoption</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="welcomeModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle">
+    <div class="modal-card">
+      <p class="eyebrow">WELCOME</p>
+      <h2 id="welcomeTitle">Tracy Chihuahua Puppies for Adoption</h2>
+      <p>Welcome. Use the options below to ask about availability, pricing, or an adoption request.</p>
+      <p class="small">No payment is taken directly on this website.</p>
+      <button id="continueBtn" class="primary full" type="button">Okay — Continue</button>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="eyebrow">TRACY CHIHUAHUA PUPPIES</p>
+      <h1>Find your next companion.</h1>
+      <p class="hero-text">Simple, direct and personal adoption inquiries.</p>
+      <a class="scroll-link" href="#start">Get started <span aria-hidden="true">↓</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section id="start" class="section intro">
+      <p class="eyebrow">ADOPTION</p>
+      <h2>How can we help?</h2>
+      <p>Choose an option and send your request through WhatsApp, iMessage, or Email.</p>
+
+      <div class="choices">
+        <button class="choice" data-flow="order" type="button">
+          <span class="choice-icon" aria-hidden="true">🐾</span>
+          <span><strong>Place an Order</strong><small>Tell us what you're looking for.</small></span>
+          <span aria-hidden="true">→</span>
+        </button>
+        <button class="choice" data-flow="price" type="button">
+          <span class="choice-icon" aria-hidden="true">💬</span>
+          <span><strong>Ask About Price</strong><small>Request current pricing and availability.</small></span>
+          <span aria-hidden="true">→</span>
+        </button>
+        <button class="choice" data-flow="question" type="button">
+          <span class="choice-icon" aria-hidden="true">❓</span>
+          <span><strong>Ask a Question</strong><small>Send a quick question about adoption.</small></span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="section trust">
+      <div>
+        <p class="eyebrow">ABOUT</p>
+        <h2>Simple. Caring. Straightforward.</h2>
+        <p class="muted">Questions, availability and adoption details are handled directly.</p>
+      </div>
+      <div class="trust-grid">
+        <div><strong>Health information</strong><span>Ask for available veterinary and health information during the adoption process.</span></div>
+        <div><strong>Clear communication</strong><span>Your request is prepared for the contact method you choose before anything is sent.</span></div>
+        <div><strong>Personal support</strong><span>Use the contact options below when you need help.</span></div>
+      </div>
+    </section>
+
+    <div id="flowProgress" class="flow-progress hidden" aria-hidden="true">
+      <span class="progress-step active">1</span><i></i><span class="progress-step">2</span><i></i><span class="progress-step">3</span>
+    </div>
+
+    <section id="formSection" class="section panel hidden">
+      <div class="form-heading">
+        <p class="eyebrow" id="formEyebrow">ORDER</p>
+        <h2 id="formTitle">Place an Order</h2>
+        <p id="formDescription" class="muted"></p>
+      </div>
+
+      <form id="requestForm">
+        <div id="orderFields" class="conditional">
+          <label for="puppyCount">Number of puppies
+            <select id="puppyCount">
+              <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+              <option value="4">4</option><option value="5">5</option>
+            </select>
+          </label>
+          <label for="puppyType">Puppy / type information
+            <input id="puppyType" type="text" placeholder="Example: Chihuahua puppy">
+          </label>
+          <label for="gender">Preferred gender
+            <select id="gender">
+              <option value="No preference">No preference</option>
+              <option value="Male">Male</option><option value="Female">Female</option>
+            </select>
+          </label>
+        </div>
+
+        <div id="personalFields" class="conditional">
+          <label for="name">Your name
+            <input id="name" type="text" autocomplete="name" required>
+          </label>
+          <label for="phone">Phone / WhatsApp
+            <input id="phone" type="tel" autocomplete="tel" required>
+          </label>
+          <label for="address">Delivery address
+            <textarea id="address" rows="3" autocomplete="street-address" required placeholder="Enter the delivery address"></textarea>
+          </label>
+
+          <button type="button" id="locationBtn" class="secondary">Use My Current Location</button>
+          <p id="locationStatus" class="small" aria-live="polite"></p>
+        </div>
+
+        <div id="questionQuick" class="question-quick hidden">
+          <p class="field-title">What would you like to know?</p>
+          <div class="quick-options">
+            <button type="button" class="quick-option" data-question="What is the current price?">What's the price?</button>
+            <button type="button" class="quick-option" data-question="Which puppies are currently available?">What's available?</button>
+            <button type="button" class="quick-option" data-question="How does the adoption process work?">How does adoption work?</button>
+          </div>
+        </div>
+
+        <label id="messageLabel" for="message">Your question / message
+          <textarea id="message" rows="4" placeholder="Write your question here..." required></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button type="button" id="backBtn" class="secondary">Back</button>
+          <button type="submit" class="primary">Review Request</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="reviewSection" class="section panel hidden">
+      <p class="eyebrow">REVIEW</p>
+      <h2>Check your request</h2>
+      <div id="reviewBox" class="review-box"></div>
+      <p class="small">Choose a contact button below. Your device will open the selected app with the request prepared for you to review.</p>
+      <div class="form-actions contact-buttons">
+        <button id="editBtn" class="secondary" type="button">Edit</button>
+        <button id="sendWhatsAppBtn" class="primary" type="button">WhatsApp</button>
+        <button id="sendMessageBtn" class="secondary" type="button">iMessage</button>
+        <button id="sendEmailBtn" class="secondary" type="button">Email</button>
+      </div>
+    </section>
+
+    <section class="section contact">
+      <p class="eyebrow">CONTACT</p>
+      <h2>Need help?</h2>
+      <p class="muted">Contact us directly using your preferred option.</p>
+      <div class="contact-actions">
+        <a class="primary" href="https://wa.me/14147328724" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="secondary" href="sms:Elonniriah123@icloud.com">iMessage</a>
+        <a class="secondary" href="mailto:Elontracy50@gmail.com">Email</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>© <span id="year"></span> Tracy Chihuahua Puppies for Adoption</div>
+    <div class="footer-links">
+      <a href="#policy" id="policyLink">Privacy &amp; Policy</a>
+      <a href="#feedback" id="feedbackLink">Private Feedback</a>
+    </div>
+  </footer>
+
+  <div id="policy" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="policyTitle">
+    <div class="modal-card">
+      <p class="eyebrow">PRIVACY &amp; POLICY</p>
+      <h2 id="policyTitle">Simple &amp; clear</h2>
+      <p>Information you enter is used to prepare your adoption inquiry for the contact method you choose.</p>
+      <p>The website does not take payments directly.</p>
+      <button class="primary full close-modal" type="button">Close</button>
+    </div>
+  </div>
+
+  <div id="feedback" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="feedbackTitle">
+    <div class="modal-card">
+      <p class="eyebrow">PRIVATE FEEDBACK</p>
+      <h2 id="feedbackTitle">Tell us what you think</h2>
+      <form id="feedbackForm">
+        <label for="feedbackName">Name <span>(optional)</span>
+          <input id="feedbackName" type="text">
+        </label>
+        <label for="feedbackText">Feedback
+          <textarea id="feedbackText" rows="4" required></textarea>
+        </label>
+        <button type="submit" class="primary full">Send Feedback</button>
+      </form>
+      <p id="feedbackNote" class="small" aria-live="polite"></p>
+      <button class="secondary full close-modal" type="button">Close</button>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
